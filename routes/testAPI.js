@@ -17,7 +17,6 @@ router.post("/api/mult", body("value").isNumeric(), (req, res) => {
   //   body("value").isNumeric();
   const value1 = value * 2;
   res.send({
-    message: "hello",
     data: value1,
   });
 });
