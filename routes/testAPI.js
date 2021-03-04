@@ -12,13 +12,14 @@ router.post("/api/mult", body("value").isNumeric(), (req, res) => {
     return res.send({
       error: "Please enter a valid number!",
     });
+  } else {
+    const value = req.body.value;
+    //   body("value").isNumeric();
+    const value1 = value * 2;
+    res.send({
+      data: value1,
+    });
   }
-  const value = req.body.value;
-  //   body("value").isNumeric();
-  const value1 = value * 2;
-  res.send({
-    data: value1,
-  });
 });
 
 module.exports = router;
